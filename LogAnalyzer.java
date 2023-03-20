@@ -76,6 +76,9 @@ public class LogAnalyzer
         return total;
     }
     
+    /**
+     * 
+     */
     public int busiestHour() {
         int busiestHour = 0;
         int maxCount = 0;
@@ -89,6 +92,9 @@ public class LogAnalyzer
         return busiestHour;
     }
     
+    /**
+     * 
+     */
     public int quietestHour() {
         int quietestHour = 0;
         int minCount = 0;
@@ -102,6 +108,9 @@ public class LogAnalyzer
         return quietestHour;
     }
     
+    /**
+     * 
+     */
     public int busiestTwoHour() {
         int busiestTwoHour = 0;
         int maxCount = 0;
@@ -113,5 +122,41 @@ public class LogAnalyzer
             }
         }
         return busiestTwoHour;
+    }
+    
+    /**
+     * 
+     */
+    public int busiestDay() {
+        int busiestDay = 0;
+        
+        return busiestDay;        
+    }
+    
+    /**
+     * 
+     */
+    public int quietestDay() {
+        int quietestDay = 0;
+        
+        return quietestDay;
+    }
+    
+    /**
+     * 
+     */
+    public int busiestMonth() {
+        int busiestMonth = 0;
+        
+        return busiestMonth;        
+    }
+    
+    /**
+     * 
+     */
+    public int quietestMonth() {
+        int quietestMonth = 0;
+        
+        return quietestMonth;
     }
 }
