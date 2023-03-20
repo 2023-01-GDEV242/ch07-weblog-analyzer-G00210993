@@ -6,8 +6,9 @@
  */
 public class LogAnalyzer
 {
-    // Where to calculate the hourly access counts.
+    // Where to calculate the access counts.
     private int[] hourCounts;
+    
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
 
@@ -24,14 +25,13 @@ public class LogAnalyzer
     }
     
     /**
-     * 
      * @param fileName the name of the file
      */
     public LogAnalyzer(String fileName) {
         hourCounts = new int[24];
         reader = new LogfileReader(fileName);
     }
-
+    
     /**
      * Analyze the hourly access data from the log file.
      */
@@ -77,7 +77,7 @@ public class LogAnalyzer
     }
     
     /**
-     * 
+     * Logs the busiest hour
      */
     public int busiestHour() {
         int busiestHour = 0;
@@ -93,7 +93,7 @@ public class LogAnalyzer
     }
     
     /**
-     * 
+     * Logs the quietest hour
      */
     public int quietestHour() {
         int quietestHour = 0;
@@ -125,7 +125,7 @@ public class LogAnalyzer
     }
     
     /**
-     * 
+     * Logs the busiest day
      */
     public int busiestDay() {
         int busiestDay = 0;
@@ -134,7 +134,7 @@ public class LogAnalyzer
     }
     
     /**
-     * 
+     * Logs the quietest day
      */
     public int quietestDay() {
         int quietestDay = 0;
@@ -143,7 +143,7 @@ public class LogAnalyzer
     }
     
     /**
-     * 
+     * Logs the busiest Month
      */
     public int busiestMonth() {
         int busiestMonth = 0;
@@ -152,7 +152,7 @@ public class LogAnalyzer
     }
     
     /**
-     * 
+     * Logs the quietest month
      */
     public int quietestMonth() {
         int quietestMonth = 0;
