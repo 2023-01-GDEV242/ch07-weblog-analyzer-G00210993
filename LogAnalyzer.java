@@ -8,6 +8,8 @@ public class LogAnalyzer
 {
     // Where to calculate the access counts.
     private int[] hourCounts;
+    private int[] dayCounts;
+    private int[] monthCounts;
     
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
@@ -17,9 +19,11 @@ public class LogAnalyzer
      */
     public LogAnalyzer()
     { 
-        // Create the array object to hold the hourly
-        // access counts.
+        // Create the array objects to hold the access counts.
         hourCounts = new int[24];
+        dayCounts = new int[28];
+        monthCounts = new int[12];
+    
         // Create the reader to obtain the data.
         reader = new LogfileReader("demo.log");
     }
@@ -129,7 +133,14 @@ public class LogAnalyzer
      */
     public int busiestDay() {
         int busiestDay = 0;
+        int maxCount = 0;
         
+        for(int i = 0; i < dayCounts.length; i++) {
+            if(dayCounts[i] < maxCount) {
+                busiestDay = i;
+                maxCount = dayCounts[i];
+            }
+        }
         return busiestDay;        
     }
     
@@ -138,7 +149,14 @@ public class LogAnalyzer
      */
     public int quietestDay() {
         int quietestDay = 0;
+        int minCount = 0;
         
+        for(int i = 0; i < dayCounts.length; i++) {
+            if(dayCounts[i] < minCount) {
+                quietestDay = i;
+                minCount = dayCounts[i];
+            }
+        }
         return quietestDay;
     }
     
@@ -147,7 +165,14 @@ public class LogAnalyzer
      */
     public int busiestMonth() {
         int busiestMonth = 0;
+        int maxCount = 0;
         
+        for(int i = 0; i < monthCounts.length; i++) {
+            if(monthCounts[i] < maxCount) {
+                busiestMonth = i;
+                maxCount = monthCounts[i];
+            }
+        }
         return busiestMonth;        
     }
     
@@ -156,7 +181,14 @@ public class LogAnalyzer
      */
     public int quietestMonth() {
         int quietestMonth = 0;
+        int minCount = 0;
         
+        for(int i = 0; i < monthCounts.length; i++) {
+            if(monthCounts[i] < minCount) {
+                quietestMonth = i;
+                minCount = monthCounts[i];
+            }
+        }
         return quietestMonth;
     }
 }
